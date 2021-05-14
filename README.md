@@ -5,6 +5,7 @@
 1. Run `skaffold dev`
 1. Change `/etc/hosts`
 1. When in Chrome and security tab blocks you, type *thisisunsafe*
+1. Create *JWT_KEY* secret `kubectl create secret generic jwt-secret --from-literal=JWT_KEY=asdf`
 
 ## Google Cloud
 
