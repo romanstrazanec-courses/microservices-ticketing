@@ -41,7 +41,7 @@ global.signin = () => {
     return [`express:sess=${
         Buffer.from(JSON.stringify({
             jwt: jwt.sign({
-                id: 'dah32en',
+                id: new mongoose.Types.ObjectId().toHexString(),
                 email: 'test@test.com'
             }, process.env.JWT_KEY!)
         })).toString('base64')
