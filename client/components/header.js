@@ -2,9 +2,9 @@ import Link from "next/link";
 
 const Header = ({currentUser}) => {
     const links = [
-        !currentUser && {label: 'Sign Up', href: '/api/auth/signup'},
-        !currentUser && {label: 'Sign In', href: '/api/auth/signin'},
-        currentUser && {label: 'Sign Out', href: '/api/auth/signout'}
+        !currentUser && {label: 'Sign Up', href: '/auth/signup'},
+        !currentUser && {label: 'Sign In', href: '/auth/signin'},
+        currentUser && {label: 'Sign Out', href: '/auth/signout'}
     ].filter(e => e).map(({label, href}) => {
         return <li key={href} className="nav-item">
             <Link href={href}>
