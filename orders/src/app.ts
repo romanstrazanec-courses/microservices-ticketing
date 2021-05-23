@@ -4,10 +4,10 @@ import {json} from 'body-parser';
 import cookieSession from "cookie-session";
 import {currentUser, errorHandler, NotFoundError} from "@ticketing-romanstrazanec/common";
 
-import {createTicketRouter} from "./routes/new";
-import {showTicketRouter} from "./routes/show";
-import {indexTicketRouter} from "./routes";
-import {updateTicketRouter} from "./routes/update";
+import {indexOrderRouter} from "./routes/index";
+import {newOrderRouter} from "./routes/new";
+import {showOrderRouter} from "./routes/show";
+import {deleteOrderRouter} from "./routes/delete";
 
 const app = express();
 app.set('trust proxy', true);
@@ -18,10 +18,10 @@ app.use(cookieSession({
 }));
 app.use(currentUser);
 
-app.use(createTicketRouter);
-app.use(showTicketRouter);
-app.use(indexTicketRouter);
-app.use(updateTicketRouter);
+app.use(indexOrderRouter);
+app.use(deleteOrderRouter);
+app.use(showOrderRouter);
+app.use(newOrderRouter);
 
 app.all('*', async (req, res, next) => {
     throw new NotFoundError();
