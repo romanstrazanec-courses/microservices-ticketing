@@ -1,4 +1,4 @@
-# Tickets service
+# Expiration service
 
 ## Steps
 
